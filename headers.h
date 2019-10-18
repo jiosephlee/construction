@@ -1,5 +1,6 @@
-struct food_grade {
+struct yelp_review {
   int stars;
   char *restaurant;
 };
-struct food_grade create_example(char restaurants[7][10],int m, int randomseeder);
+struct yelp_review create_review(char restaurants[7][10],int m, int randomseed);
+void update_review(struct yelp_review *input, int randomseed);

@@ -1,12 +1,15 @@
-struct food_grade {
+struct yelp_review {
   int stars;
   char *restaurant;
 };
 
-struct food_grade create_example(char restaurants[7][10], int m, int randomseeder){
-  srand(time()*randomseeder);
-  struct food_grade output;
-  output.restaurant = restaurants[rand()%m];
-  output.stars = rand()%6;
+struct yelp_review create_review(char restaurants[7][10], int m, int randomseed){
+  struct yelp_review output;
+  output.restaurant = restaurants[randomseed%m];
+  output.stars = randomseed%6;
   return output;
+}
+
+void update_review(struct yelp_review *input, int randomseed){
+  input->stars = randomseed%6;
 }
